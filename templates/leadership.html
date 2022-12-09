@@ -1,0 +1,60 @@
+{% extends 'base.html' %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %} Leadership Hiring {% endblock %}</title>
+  </head>
+  <body>
+    {% block content %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+    <div>
+      <div class="">
+        <h1 class="h1 text-center text-white py-2 my-5" style="background: #e14d2a">
+          Leadership Hiring at Arise
+        </h1>
+        <div class="text-center">
+          <p style="color: black; font-size: 1.2rem; line-height: 1.5" class="w-75 mx-auto">
+            Arise Solution is a company that specializes in leadership recruitment. • The company
+            has a team of experienced professionals who are experts in recruiting leaders for
+            organizations. Arise Solution has a proven track record of successful leadership
+            recruitment, and the company has a wealth of experience in the field. Arise Solution is
+            the perfect partner for organizations who are looking to hire leaders, primarily CxO
+            level candidates with salary more than 1 CR per annum. The company offers a
+            comprehensive solution that includes headhunting, vetting, and placement. Arise Solution
+            is the best choice for organizations who want to ensure that they hire the best leaders
+            for their organization.
+          </p>
+	  <br />
+          <p style="color: black; font-size: 1.2rem; line-height: 1.5" class="w-75 mx-auto">
+            At Arise Solution, we understand that firms in the Premium Circle Hires space face
+            unique challenges when it comes to attracting and retaining top talent. • That's why
+            we've developed a suite of services designed to address these specific needs. Our
+            attraction and engagement services help firms to identify and reach out to the best
+            prospects, while our transition services help new hires to adjust quickly and
+            effectively to their new roles. And because we know that successful talent management
+            starts with accurate mapping, our team of experts take a tailored approach to each
+            client's mapping needs, ensuring that the right people are matched with the right
+            positions. With Arise Solution on your side, you can rest assured that your firm has the
+            tools and resources it needs to thrive in today's competitive market.
+          </p>
+	  <br />
+          <p style="color: black; font-size: 1.2rem; line-height: 1.5" class="w-75 mx-auto">
+            Arise Solution is pleased to provide our clients with a top-tier headhunting mechanism.
+            • This sophisticated system is designed to help identify and recruit the best candidates
+            for your organization. Arise Solution's headhunting mechanism is a comprehensive
+            approach that begins with an in-depth assessment of your organizational needs. We then
+            utilize our vast network of contacts to identify potential candidates. Once a pool of
+            qualified candidates has been identified, we conduct rigorous interviews to assess each
+            candidate's skills, experience, and fit for the organization. Finally, we provide you
+            with a detailed report that includes our recommendations for the best candidates for the
+            job. With Arise Solution's headhunting mechanism, you can be confident that you are
+            getting the best possible candidates for your organization.
+          </p>
+          <img style="width: 40%" class="my-5" src="{% static 'leader.jpg' %}" />
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>

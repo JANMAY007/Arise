@@ -1,0 +1,39 @@
+{% extends 'base.html' %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %} Hire, Train and Deploy {% endblock %}</title>
+  </head>
+  <body>
+    {% block content %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+    <div>
+      <div class="">
+        <h1 class="h1 text-center text-white py-2 my-5" style="background: #e14d2a">
+          Hiring, Training and Deploying made easy via Arise
+        </h1>
+        <div class="text-center">
+          <p style="color: black; font-size: 1.2rem; line-height: 1.5" class="w-75 mx-auto">
+            Arise Solution is a leading provider of Recruitment & Staffing Services. We are
+            committed to providing the highest quality of service to our clients. At Arise Solution,
+            we understand that every business has unique staffing needs. That's why we offer a
+            comprehensive range of recruitment and staffing services. We can help you find the right
+            candidates for any role, and our training and deployment services ensure that they have
+            the skills and knowledge required to succeed in their new positions. Whether you're
+            looking for a temporary employee to cover a maternity leave or a permanent staff member
+            to fill a critical role, we can help. As part of the Hire-Train-Deploy service, we hire,
+            train and deploy employees as per their exact specification of our client. For example,
+            if you are looking for a SEO specialist, we will hire, train the candidate on SEO
+            skillset and deploy it to you in the given timeframe. We have a team of experienced and
+            qualified professionals who are experts in their respective fields and we are confident
+            that we can provide you with the best possible service. Contact us today to discuss your
+            requirements. Thank you.
+          </p>
+          <img style="width: 40%" class="my-5" src="{% static 'train.jpg' %}" />
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>

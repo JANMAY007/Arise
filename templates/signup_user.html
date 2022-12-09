@@ -1,0 +1,120 @@
+{% extends 'base.html' %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>SIGNUP</title>
+  </head>
+  <body>
+    {% block content %}
+    <link rel="stylesheet" href="{% static 'css/contactus.css' %}" />
+    <section class="gradient-form" style="background-color: #eee">
+      <div class="container" style="padding-top: 5rem">
+        <div class="row d-flex justify-content-center align-items-center">
+          <div class="col-xl-10">
+            <div class="card rounded-3 text-black">
+              <div class="row g-0">
+                <div class="col-lg-6">
+                  <div class="card-body p-md-5 mx-md-4">
+                    <div class="text-center">
+                      <img src="{% static 'arise_logo.jpg' %}" style="width: 185px" alt="logo" />
+                    </div>
+                    <br />
+                    <div class="row justify-content-center mt-5">
+                      {% if error %}
+                      <div class="alert alert-danger" role="alert">{{ error }}</div>
+                      {% endif %}
+                      <form method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                          <label class="mb-2" for="username">Username</label>
+                          <input
+                            type="text"
+                            name="username"
+                            class="form-control"
+                            id="username"
+                            aria-describedby="usernameHelp"
+                          />
+                          <small id="usernameHelp" class="form-text text-muted"
+                            >Your username must be unique. We'll let you know if someone has taken
+                            it already.</small
+                          >
+                        </div>
+                        <div class="form-group">
+                          <label class="mb-2" for="password1">Password</label>
+                          <input
+                            type="password"
+                            name="password1"
+                            class="form-control"
+                            id="password1"
+                          />
+                        </div>
+                        <div class="form-group">
+                          <label class="mb-2" for="password2">Confirm Password</label>
+                          <input
+                            type="password"
+                            name="password2"
+                            class="form-control"
+                            id="password2"
+                          />
+                        </div>
+                        <div class="form-group">
+                          <label class="mb-2" for="email">Email</label>
+                          <input type="email" name="email" class="form-control" id="email" />
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3">Sign Up</button>
+                      </form>
+                      <div class="text-center mt-4">
+                        Do you already have an account? <a href="/login/">Login here</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 d-flex align-items-center" style="background: #e14d2a">
+                  <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                    <br /><br />
+                    <ul class="w-100">
+                      <li class="d-flex justify-content-between align-items-center w-100">
+                        <h3 class="mr-2">&#10003;</h3>
+                        <p style="width: 100%">
+                          First, interested individuals must create an account on our website.
+                        </p>
+                      </li>
+                      <br /><br />
+                      <li class="d-flex justify-content-between align-items-center">
+                        <h3 class="mr-2">&#10003;</h3>
+                        <p style="width: 100%">
+                          Once an account has been created, individuals can then begin the process
+                          of applying to be a Arise Solution Provider. This process includes
+                          completing a detailed online application and participating in an interview
+                        </p>
+                      </li>
+                      <br /><br />
+                      <li class="d-flex justify-content-between align-items-center text-wrap">
+                        <h3 class="mr-2">&#10003;</h3>
+                        <p style="width: 100%">
+                          After successfully completing these steps, individuals will be able to
+                          begin using the Arise platform to find work-from-home opportunities that
+                          fit their skills and interests
+                        </p>
+                      </li>
+                      <br /><br />
+                      <li class="d-flex justify-content-between align-items-center">
+                        <h3 class="mr-2">&#10003;</h3>
+                        <p style="width: 100%">
+                          We believe that by taking these steps, we can provide the best possible
+                          experience for both job seekers and businesses who are using our platform.
+                        </p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% endblock %}
+  </body>
+</html>

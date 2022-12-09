@@ -1,0 +1,59 @@
+{% extends 'base.html' %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %} Permanent and Temporary Hiring {% endblock %}</title>
+  </head>
+  <body>
+    {% block content %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+    <div>
+      <div class="">
+        <h1 class="h1 text-center text-white py-2 my-5" style="background: #e14d2a">
+          Temporary Hiring at Arise
+        </h1>
+        <div class="text-center">
+          <p style="color: black; font-size: 1.2rem; line-height: 1.5" class="w-75 mx-auto">
+            Arise Solutions is one of the leading employee leasing services in India. We provide a
+            cost-effective and efficient temporary staffing service to businesses all around the
+            country. With Arise Solutions, our clients enjoy the flexibility of staff as we provide
+            temporary staffing services. We assist in keeping their projects moving by solving the
+            problem of overloaded employees. Our recruiters are always on the lookout for people who
+            have excellent communication skills, great attitude, and are creatively competent, while
+            being a brilliant team player. Organizations that may not have the necessary
+            infrastructure to carry out often tedious and always labour-intensive tasks by
+            themselves have Arise to meet their needs. We are here to take care of every employee
+            management task for you; even as a third-party company, we are dedicated to the success
+            of our clients. Contact us today to see how we can help you!
+          </p>
+        </div>
+      </div>
+      <div class="">
+        <h1 class="h1 text-center text-white bg-primary py-2 my-5">Permanent Hiring at Arise</h1>
+        <div class="text-center">
+          <p style="color: black; font-size: 1.2rem; line-height: 1.5" class="w-75 mx-auto">
+            At Arise Solutions, we provide permanent staffing services to our highly esteemed
+            clients. Our deep understanding of every business, in addition to finding people with
+            the same understanding and being well-versed with the latest technologies tops our
+            priority list. We help our clients recruit people with experience in administrative
+            support and management, ability to support both offshore and onsite models, and exposure
+            to a global work environment. Through our strict rules of quality assurance, we make
+            sure our team screens all the resources thoroughly before presenting them to the client.
+            Our well-managed backup system/team is in place to ensure smooth functioning as well as
+            timely response to the clients’ requirements. To always be at the top of our game, we
+            conduct monthly workshops and webinars on different aspects of recruitment. These
+            training sessions are not only for our new recruits but also for our experienced team
+            members who need a refresher course now and then. Apart from this, we have an intranet
+            portal exclusively for our team where they can post queries/doubts which will be
+            answered by the senior members promptly. Arise Solutions has carved a niche for itself
+            in the field of manpower solutions and it will continue to do so with its unending
+            efforts and commitment towards excellence.
+          </p>
+          <img style="width: 40%" class="my-5" src="{% static 'bulk.jpg' %}" />
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>

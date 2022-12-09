@@ -1,0 +1,78 @@
+{% extends 'base.html' %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %} Apprenticeship {% endblock %}</title>
+  </head>
+  <body>
+    {% block content %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+    <div>
+      <div class="">
+        <h1 class="h1 text-center text-white py-2 my-5" style="background: #e14d2a">
+          What's Apprenticeship?
+        </h1>
+        <div class="text-center">
+          <p style="color: black; font-size: 1.2rem; line-height: 1.5" class="w-75 mx-auto">
+            Apprenticeship training is a system of learning that combines on-the-job experience with
+            related classroom instruction. Under the supervision of a journey-level worker,
+            apprentices receive hands-on training in their chosen trade. Apprenticeship programs
+            typically last four years, and during that time apprentices must complete a minimum
+            number of hours of both on-the-job training and related classroom instruction. While the
+            specifics vary from trade to trade, apprenticeship programs provide participants with
+            the skills and knowledge necessary to perform their jobs effectively and safely. In
+            addition, apprenticeship programs often result in better wages and job stability for
+            participants. As such, apprenticeship training is an excellent way to enter into a
+            skilled trade.
+          </p>
+          <img style="width: 40%" class="my-5" src="{% static 'apprentice.jpg' %}" />
+        </div>
+        <h1 class="h1 text-center text-white bg-primary py-2 mb-5">Apprenticeship at Arise</h1>
+        <div class="text-center">
+          <p style="color: black; font-size: 1.2rem; line-height: 1.5" class="w-75 mx-auto">
+            Arise Solutions has been in business for over 10 years, and during that time, we have
+            helped countless individuals and organizations achieve their employment objectives. One
+            area that we are particularly passionate about is apprenticeship training. We believe
+            that apprenticeship programs can provide a tremendous opportunity for businesses to
+            develop their workforce and meet their overall goals. There are many benefits to
+            apprenticeship programs, including the ability to train employees in specific skillsets,
+            the development of a pipeline of qualified workers, and the reduction of turnover. We
+            are committed to helping our clients utilize apprenticeship programs to their fullest
+            potential and achieve success. If you are interested in learning more about how we can
+            help you, please contact us today.
+          </p>
+          <p style="color: black; font-size: 1.2rem; line-height: 1.5;" class="w-75 mx-auto mt-5">
+            The Apprentices Act, 1961 was enacted with the objective of regulating the program of
+            training of apprentices in the industry by utilizing the facilities available therein
+            for imparting on-the-job training. As the 1961 law was old and with changing times
+            needed revamping - Government of India has brought about comprehensive reforms in the
+            Apprenticeship Act in 2014 & the Apprenticeship Rules in 2015 to make apprenticeship
+            more industry-friendly. The refreshingly new features introduced in the revised scheme
+            are - widened scope of registration of establishments, including sole proprietorships
+            and partnership firms; engagement of apprentices in skills which are relevant to
+            contemporary needs of industry; setting up of National & Sector Skill Councils to
+            specify norms for apprenticeable trades and occupations; online registration &
+            declaration; etc. • The Apprentices Act, 1961 has been suitably amended for
+            implementation of the scheme throughout the country with uniformity. The Scheme is
+            operationalised through web portal www.apprenticeship.gov.in . Online registration &
+            declaring vacancies by establishments is facilitated through this portal. • The portal
+            also provides a platform for interaction between all stakeholders for successful
+            implementation of the scheme. Administration of the scheme is vested with Directorate
+            General of Training (DGT), Ministry of Skill Development and Entrepreneurship (MSDE).
+            DGT is nodal agency at national level, while State/UT Governments are responsible for
+            administration at field level through their Directorates/offices of Directorates of
+            Employment and Training(DETs). Industrial Training Institutes (ITIs) functioning under
+            them provide support in capacity building as well as certification process. • Presently,
+            over 4 lakh apprentices are imparted training annually under the scheme across 5000+
+            establishments registered on www.apprenticeship.gov.in .This is just a start and it is
+            envisaged that with further refinement & simplification in procedures, more & more
+            employers will come forward to engage apprentices and thereby provide an impetus to
+            skill development leading to employment generation especially among our youth .
+          </p>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>

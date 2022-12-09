@@ -1,0 +1,52 @@
+{% extends 'base.html' %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %} Contract Staffing {% endblock %}</title>
+  </head>
+  <body>
+    {% block content %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+    <div>
+      <div class="">
+        <h1 class="h1 text-center text-white py-2 my-5" style="background: #e14d2a">
+          What's Contract Staffing?
+        </h1>
+        <div class="text-center">
+          <p style="color: black; font-size: 1.2rem; line-height: 1.5" class="w-75 mx-auto">
+            Contract staffing is a type of recruitment in which candidates are hired to work for a
+            specific period of time, usually on a project basis. The length of the contract can vary
+            depending on the needs of the employer, but it is typically for a period of six months
+            to one year. After the contract period ends, the employee is typically no longer
+            employed by the company. Contract staffing can be an advantageous way for employers to
+            find talented workers for specific projects without having to commit to a long-term
+            employment relationship. It can also be beneficial for employees who are looking for
+            flexibility or who only want to work on a short-term basis. However, contract staffing
+            can also be less stable than traditional employment arrangements and may not provide
+            employees with the same benefits, such as health insurance and retirement savings plans.
+          </p>
+        </div>
+        <h1 class="h1 text-center text-white bg-primary py-2 my-5">Contract Staffing at Arise</h1>
+        <div class="text-center">
+          <p style="color: black; font-size: 1.2rem; line-height: 1.5" class="w-75 mx-auto mt-5">
+            At Arise Solutions, we offer the best staffing services that cater to both short-term as
+            well as project-based staffing requirements of our clients. We strive to make the costs
+            of employee administration as less as we can. But, most importantly, it is our aim to
+            add value to our client businesses with temp staffing services, which they may even
+            decide to absorb into their company rolls in the future. According to your personnel
+            requirement, in terms of duration, qualifications, skill set, or specific project needs
+            and more, you will find Arise to meet your staffing requirements in full. Outsourcing
+            your contract staffing needs to Arise Solutions consultants will certainly leave you
+            more time to concentrate on your core business, while saving you a lot of money and
+            resources. We are confident that our team of highly skilled and experienced
+            professionals will be able to deliver the results that you are looking for. So why not
+            get in touch with us today and let us show you what we can do?
+          </p>
+          <img style="width: 40%" class="mb-5" src="{% static 'contract.jpg' %}" />
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>

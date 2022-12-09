@@ -1,0 +1,133 @@
+{% extends 'base.html' %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %} Why Arise Solutions? {% endblock %}</title>
+  </head>
+  <body>
+    {% block content %}
+    <style>
+      .adv {
+        width: 60%;
+      }
+
+      @media screen and (max-width: 600px) { 
+        .hide {
+          display: none;
+        }
+        .adv {
+          width: 75%;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+    <div>
+      <div class="mb-5">
+        <h1 class="h1 text-center text-white py-2 my-5" style="background: #e14d2a">Why us?</h1>
+        <div class="text-center">
+          <p style="color: black; font-size: 1.2rem; line-height: 1.5" class="w-75 mx-auto">
+            Here at Arise Solution, we pride ourselves on being able to provide our clients with the
+            best possible candidates for their open positions. We are a technology driven company
+            with automated office operations and have a very quick turnaround time. We have been in
+            business for 15 years and have built relationships with other companies because of our
+            outstanding performance. If you are looking for a company that can provide you with
+            quality candidates, then look no further than Arise Solution! If you are in need of
+            staffing services, then look no further than Arise Solution! We are confident that we
+            can provide you with the best possible candidates for your open positions. We have built
+            lasting relationships with other companies over the years because of our commitment to
+            excellence. Contact us today to learn more about how we can help you!
+          </p>
+        </div>
+      </div>
+    </div>
+    <br /><br />
+    <div class="container">
+      <div class="row mx-5">
+        <div class="d-flex flex-sm-row flex-column mb-5 align-items-center" style="gap: 18rem">
+          <img class="w-75 hide" src="{% static 'why_arise_solutions/1.png' %}" class="card-img-top" />
+          <div class="text-left">
+            <h5 style="font-size: 2rem">Turnaround Time</h5>
+            <p class="mt-2" style="line-height: 1.5">
+              Our clients know that they can rely on us to provide them with the best possible
+              candidates in a timely manner
+            </p>
+          </div>
+        </div>
+        <div class="d-flex flex-sm-row flex-column my-5 align-items-center" style="gap: 18rem">
+          <div class="text-left">
+            <h5 style="font-size: 2rem">Quality of Candidates</h5>
+            <p class="mt-2" style="line-height: 1.5">
+              We have a very low rejection rate because we only send our clients the most qualified
+              candidates
+            </p>
+          </div>
+          <img class="w-75 hide" src="{% static 'why_arise_solutions/2.jpg' %}" class="card-img-top" />
+        </div>
+      </div>
+      <div class="row mx-5">
+        <div class="d-flex flex-sm-row flex-column my-5 align-items-center" style="gap: 18rem">
+          <img class="w-50 hide" src="{% static 'why_arise_solutions/3.png' %}" class="card-img-top" />
+          <div class="text-left">
+            <h5 style="font-size: 2rem">Relationships with Other Companies</h5>
+            <p class="mt-2" style="line-height: 1.5">
+              We have built strong relationships with other companies over the years because of our
+              consistent ability to deliver quality candidates
+            </p>
+          </div>
+        </div>
+        <div class="d-flex flex-sm-row flex-column my-5 align-items-center" style="gap: 18rem">
+          <div class="text-left">
+            <h5 style="font-size: 2rem">Technology Driven Processes</h5>
+            <p class="mt-2" style="line-height: 1.5">
+              Our automated office operations and technology driven processes allow us to be more
+              efficient and provide our clients with the best possible service
+            </p>
+          </div>
+          <img class="w-50 hide" src="{% static 'why_arise_solutions/4.jpg' %}" class="card-img-top" />
+        </div>
+      </div>
+    </div>
+    <div class="h1 text-center my-5 bg-primary text-white py-2">Our Unique Selling Proposition</div>
+    <div class="d-flex flex-sm-row flex-column justify-content-center align-items-center">
+      <div class="adv mx-md-0 mx-auto">
+        <div class="d-flex w-fit" style="line-height: 1.5">
+          <h3 class="mr-2">&#10003;</h3>
+          <p style="width: 75%; font-size: 1.2rem;">
+            TAT (Turn Around Time) - Our turnaround time is very quick and we are able to provide
+            our clients with the best possible candidates for their open positions. Our clients know
+            that they can rely on us to provide them with the best possible candidates and that we
+            will always be available to help them with their staffing needs
+          </p>
+        </div>
+        <br />
+        <div class="d-flex w-fit" style="line-height: 1.5">
+          <h3 class="mr-2">&#10003;</h3>
+          <p style="width: 75%; font-size: 1.2rem;">
+            Our ability to provide quality candidates with a very low rejection rate
+          </p>
+        </div>
+        <br />
+        <div class="d-flex w-fit" style="line-height: 1.5">
+          <h3 class="mr-2">&#10003;</h3>
+          <p style="width: 75%; font-size: 1.2rem;">
+            15 years long standing relationship with recruiting companies because of our
+            award-winning performance, ability to sustain consistently in the market and our
+            technology driven recruitment process.
+          </p>
+        </div>
+        <br />
+        <div class="d-flex w-fit" style="line-height: 1.5">
+          <h3 class="mr-2">&#10003;</h3>
+          <p style="width: 75%; font-size: 1.2rem;">Technology driven processes and automated office operations.</p>
+        </div>
+      </div>
+      <img
+        class="w-25 mx-auto mx-md-0 my-5 my-md-0 hide"
+        src="{% static 'why_arise_solutions/5.jpeg' %}"
+      />
+    </div>
+
+    {% endblock %}
+  </body>
+</html>

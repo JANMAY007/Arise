@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %} Detailed Blog {% endblock %}</title>
+  </head>
+  <body>
+    {% block content %}
+    <h1 class="text-center mt-5" id="blogdetailtitle" style="font-size: 3rem">{{ blog.title }}</h1>
+    <h5 class="text-center text-muted mt-2 mb-5">{{ blog.date|date:'F jS Y' }}</h5>
+    <div class="container">{{ blog.body.html | safe }}</div>
+    {% endblock %}
+  </body>
+</html>

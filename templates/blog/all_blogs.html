@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %} All Blogs {% endblock %}</title>
+  </head>
+  <body>
+    {% block content %}
+    <div style="min-height: 58vh">
+      <h1 id="blogtitle" class="text-center text-white py-2 h1" style="background: #e14d2a;">Publications</h1>
+      <h3 class="text-center mb-5">Blogs: {{ blogs.count }}</h3>
+      {% for blog in blogs %}
+      <div class="row justify-content-center my-3 mx-4">
+        <div class="col-md-10">
+          <a class="text-decoration-none" href="{% url 'blog:detail' blog.id %}">
+            <p class="text-dark" style="font-size: 1.5rem">{{ blog.title }}</p>
+          </a>
+          <h5 class="text-muted my-2">{{ blog.date|date:'M d Y'}}</h5>
+          <h4 class="text-muted">{{ blog.body.html|safe|striptags|truncatechars:100 }}</h4>
+        </div>
+      </div>
+    </div>
+    {% endfor %} {% endblock %}
+  </body>
+</html>

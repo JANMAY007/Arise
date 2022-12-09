@@ -1,0 +1,143 @@
+{% extends 'base.html' %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}
+Walk in Form
+    {% endblock %}</title>
+  </head>
+  <body>
+    {% block content %}
+    <link rel="stylesheet" href="{% static 'css/contactus.css' %}" />
+    <section class="" style="background-color: #eee">
+      <div class="container" style="padding-top: 5rem; margin-bottom: 5rem">
+        <div class="row d-flex justify-content-center align-items-center">
+          <div class="col-xl-10">
+            <div class="card rounded-3 text-black">
+              <div class="row g-0">
+                <div class="col-lg-6">
+                  <div class="card-body p-md-5 mx-md-4">
+                    <div class="text-center">
+                      <img src="{% static 'arise_logo.jpg' %}" style="width: 185px" alt="logo" />
+                    </div>
+                    <br />
+                    <div class="row justify-content-center mt-5">
+                      {% if error %}
+                      <div class="alert alert-danger" role="alert">{{ error }}</div>
+                      {% endif %}
+                      <form method="POST" action="{% url 'WalkinForm' %}">
+                        {% csrf_token %}
+                          <div class="form-group">
+                              <label class="mb-2" for="opening">Apply in which job?</label>
+                              <select name="opening" id="opening">
+                                  {% for job in jobs %}
+                                      <option value="{{ job }}">{{ job }}</option>
+                                  {% endfor %}
+                              </select>
+                          </div>
+                        <div class="form-group">
+                          <label class="mb-2" for="date_of_birth">Date of Birth</label>
+                          <input type="date" name="date_of_birth" class="form-control" id="date_of_birth" />
+                        </div>
+                        <div class="form-group">
+                          <label class="mb-2" for="position_applied">Position Applied</label>
+                          <input type="text" name="position_applied" class="form-control" id="position_applied" />
+                        </div>
+                        <div class="form-group">
+                          <label class="mb-2" for="full_name">Full Name</label>
+                          <input type="text" name="full_name" class="form-control" id="full_name" />
+                        </div>
+                        <div class="form-group">
+                          <label class="mb-2" for="gender">Gender</label>
+                          <input type="text" name="gender" class="form-control" id="gender" />
+                        </div>
+                        <div class="form-group">
+                          <label class="mb-2" for="marital_status">Marital Status</label>
+                          <input type="text" name="marital_status" class="form-control" id="marital_status" />
+                        </div>
+                        <div class="form-group">
+                          <label class="mb-2" for="mobile_number">Mobile No.</label>
+                          <input type="text" name="mobile_number" class="form-control" id="mobile_number" />
+                        </div>
+                        <div class="form-group">
+                          <label class="mb-2" for="current_location">Current Location</label>
+                          <input type="text" name="current_location" class="form-control" id="current_location" />
+                          <span class="help-block">Enter city name only</span>
+                        </div>
+                          <br>
+                        <div class="form-group">
+                          <label class="mb-2" for="email">Email</label>
+                          <input type="email" name="email" class="form-control" id="email" />
+                        </div>
+                        <div class="form-group">
+                          <label class="mb-2" for="highest_qualification">Highest Education Qualification</label>
+                          <input type="text" name="highest_qualification" class="form-control" id="highest_qualification" />
+                        </div>
+                          <div class="form-group">
+                              <label class="mb-2" for="resume">Upload Resume</label>
+                              <input type="file" accept="application/pdf" name="resume" class="form-control" id="resume">
+                              <span class="help-block">File size must not exceed 5 Mb</span>
+                          </div>
+                        <button type="submit" class="btn btn-warning mt-3">Submit</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 d-flex align-items-center" style="background: #e14d2a">
+                  <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                    <br /><br />
+                    <ul class="w-100">
+                      <li class="d-flex justify-content-between align-items-center w-100">
+                        <h3 class="mr-2">&#10003;</h3>
+                        <p style="width: 100%">
+                          First, interested individuals must create an account on our website.
+                        </p>
+                      </li>
+                      <li class="d-flex justify-content-between align-items-center">
+                        <h3 class="mr-2">&#10003;</h3>
+                        <p style="width: 100%">
+                          Once an account has been created, individuals can then begin the process
+                          of applying to be a Arise Solution Provider. This process includes
+                          completing a detailed online application and participating in an interview
+                        </p>
+                      </li>
+                      <li class="d-flex justify-content-between align-items-center text-wrap">
+                        <h3 class="mr-2">&#10003;</h3>
+                        <p style="width: 100%">
+                          After successfully completing these steps, individuals will be able to
+                          begin using the Arise platform to find work-from-home opportunities that
+                          fit their skills and interests
+                        </p>
+                      </li>
+                      <li class="d-flex justify-content-between align-items-center">
+                        <h3 class="mr-2">&#10003;</h3>
+                        <p style="width: 100%">
+                          We believe that by taking these steps, we can provide the best possible
+                          experience for both job seekers and businesses who are using our platform.
+                        </p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+        <script>
+        $("form").submit(function() {
+  if (window.File && window.FileReader && window.FileList && window.Blob) {
+      const file = $('#resume')[0].files[0];
+
+      if (file && file.size > 5 * 1024 * 1024) {
+      alert("File " + file.name + " of type " + file.type + " is too big");
+      return false;
+    }
+  }
+});
+        </script>
+    {% endblock %}
+  </body>
+</html>

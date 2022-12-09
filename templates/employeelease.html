@@ -1,0 +1,53 @@
+{% extends 'base.html' %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %} Employee Leasing {% endblock %}</title>
+  </head>
+  <body>
+    {% block content %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+    <div>
+      <div class="">
+        <h1 class="h1 text-center text-white py-2 my-5" style="background: #e14d2a">
+          What's Employee Leasing?
+        </h1>
+        <div class="text-center">
+          <p style="color: black; font-size: 1.2rem; line-height: 1.5" class="w-75 mx-auto">
+            Employee leasing is a service under which an organization contracts with a leasing
+            company to provide it with employees. The leasing company is responsible for hiring,
+            managing, and paying the employees. The lessee organization then contracts with the
+            leasing company to lease the employees back from the company. The leased employees work
+            for the lessee organization just as if they were direct employees of the organization.
+            The key difference is that the legal employer of the leased employees is the leasing
+            company, not the lessee organization. Employee leasing can provide several benefits to
+            businesses, including saving on costs associated with recruiting, training, and benefits
+            administration. In addition, employee leasing can help businesses avoid the hassle and
+            expense of managing employee payrolls and compliance with employment laws. However,
+            businesses should be aware that employee leasing companies are typically large, national
+            firms that may be less responsive to the needs of their clients than smaller, local
+            staffing companies.
+          </p>
+        </div>
+        <h1 class="h1 text-center text-white bg-primary py-2 my-5">Employee Leasing at Arise</h1>
+        <div class="text-center">
+          <p style="color: black; font-size: 1.2rem; line-height: 1.5" class="w-75 mx-auto mt-5">
+            At Arise Solutions, we provide employee leasing services to help companies add people to
+            their workforce without any additional administrative complexity. We transfer employees
+            from a company to our payroll, and then lease them back to the company on a temporary
+            basis as needed. In effect, Arise Solutions becomes the legal employer, taking over all
+            HR management tasks. Our team of qualified professionals includes attorneys,
+            accountants, insurance experts, and more. We will help you choose the right
+            professionals to match your interim needs and exceed your expectations. We always
+            operate within the bounds of the law and ensure compliance with all regulations related
+            to payroll, claims processing, and more. Contact us today to learn more about how we can
+            help you streamline your human resources management.
+          </p>
+          <img style="width: 40%" class="my-5" src="{% static 'lease.jpg' %}" />
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>

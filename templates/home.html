@@ -1,0 +1,420 @@
+{% extends 'base.html' %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Arise Solutions{% endblock %}</title>
+  </head>
+  <body>
+    {% block content %}
+
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+    <link rel="script" href="{% static 'js/home.js' %}" />
+    <style>
+      .carousel {
+        padding-bottom: 2rem;
+      }
+
+      ul.slides {
+        display: block;
+        position: relative;
+        height: 800px;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        list-style: none;
+      }
+
+      .slides * {
+        user-select: none;
+        -ms-user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+      }
+
+      ul.slides input {
+        display: none;
+      }
+
+      .slide-container {
+        display: block;
+      }
+
+      .slide-image {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        opacity: 0;
+        transition: all 0.7s ease-in-out;
+      }
+
+      .slide-image img {
+        min-width: 100%;
+        height: 100%;
+      }
+
+      .carousel-controls {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
+        font-size: 100px;
+        line-height: 600px;
+        color: #fff;
+      }
+
+      .carousel-controls label {
+        display: none;
+        position: absolute;
+        padding: 0 20px;
+        opacity: 0;
+        transition: opacity 0.2s;
+        cursor: pointer;
+      }
+
+      .slide-image:hover + .carousel-controls label {
+        opacity: 0.5;
+      }
+
+      .carousel-controls label:hover {
+        opacity: 1;
+      }
+
+      .carousel-controls .prev-slide {
+        width: 49%;
+        text-align: left;
+        left: 0;
+      }
+
+      .carousel-controls .next-slide {
+        width: 49%;
+        text-align: right;
+        right: 0;
+      }
+
+      .carousel-dots {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 20px;
+        z-index: 999;
+        text-align: center;
+      }
+
+      .carousel-dots .carousel-dot {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: #fff;
+        opacity: 0.5;
+        margin: 10px;
+      }
+
+      input:checked + .slide-container .slide-image {
+        opacity: 1;
+        transform: scale(1);
+        transition: opacity 1s ease-in-out;
+      }
+
+      input:checked + .slide-container .carousel-controls label {
+        display: block;
+      }
+
+      input#img-1:checked ~ .carousel-dots label#img-dot-1,
+      input#img-2:checked ~ .carousel-dots label#img-dot-2,
+      input#img-3:checked ~ .carousel-dots label#img-dot-3,
+      input#img-4:checked ~ .carousel-dots label#img-dot-4,
+      input#img-5:checked ~ .carousel-dots label#img-dot-5,
+      input#img-6:checked ~ .carousel-dots label#img-dot-6 {
+        opacity: 1;
+      }
+
+      input:checked + .slide-container .nav label {
+        display: block;
+      }
+    </style>
+    {% comment %}
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="{% static 'home_images/home1.jpg' %}"
+            class="d-block w-100"
+            style="max-height: 550px"
+            alt="..."
+          />
+          <div class="carousel-caption text-top d-none d-md-block">
+            <p class="lead" style="background-color: rgba(201, 76, 76, 0.3)">
+              The name Arise comes from our favorite quote “Arise awake and stop not till the goal
+              reached” by Swami Vivekanand. Arise is a bridge between a job applicant and client (a
+              company, organization or firm looking for resources). We work closely with both the
+              parties to identify the right match in terms of skills, culture fit, workload etc.,
+              thereby benefiting both the employer as well as job seeker. This whole process of
+              talent acquisition leads to satisfaction of our stakeholders which is our main motto.
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="{% static 'home_images/home2.jpg' %}"
+            class="d-block w-100"
+            style="max-height: 550px"
+            alt="..."
+          />
+          <div class="carousel-caption d-none d-md-block">
+            <p class="lead" style="background-color: rgba(201, 76, 76, 0.5)">
+              Arise Solution focuses on the BPO industry. We started when the industry started in
+              1999 and have been growing ever since. We are a recruitment firm that specializes in
+              volume hiring. This means that we are able to handle large scale recruitment projects
+              for our clients. We have a proven track record of success in the industry and are
+              trusted by some of the largest BPO companies in the world. We are a recruitment firm
+              that helps businesses find the right talent for their needs. We are not a placement
+              firm, so we do not take a cut of the candidate's salary. We have a team of experienced
+              recruiters who are experts of the BPO industry and can help your business find the
+              right candidates for the right positions. If you are looking for a recruitment partner
+              that can help you with your BPO hiring needs, Arise Solution is the perfect choice.
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="{% static 'home_images/home3.jpg' %}"
+            class="d-block w-100"
+            style="max-height: 550px"
+            alt="..."
+          />
+          <div class="carousel-caption d-none d-md-block">
+            <p class="lead" style="background-color: rgba(201, 76, 76, 0.3)">
+              Arise has been growing steadily, and today we are trusted consultants for most of the
+              MNCs across globe. We have been able to get repeat business from most of our clients
+              because of the quality service that we provide. With years of experience in managing
+              talent across industries and functions, we understand what it takes to identify the
+              very best talent out there in order to help you achieve your organizational goals. So
+              if you are an employer looking for quality candidates or if you are a job seeker
+              looking for an opportunity then please reach out to us and we will be more than happy
+              to assist you.
+            </p>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-target="#carouselExampleCaptions"
+        data-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-target="#carouselExampleCaptions"
+        data-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </button>
+    </div>
+    {% endcomment %}
+    <div>
+      <div class="carousel">
+        <ul class="slides">
+          <input type="radio" name="radio-buttons" id="img-1" checked />
+          <li class="slide-container">
+            <div class="slide-image">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Timisoara_-_Regional_Business_Centre.jpg"
+              />
+            </div>
+            <div class="carousel-controls">
+              <label for="img-3" class="prev-slide">
+                <span>&lsaquo;</span>
+              </label>
+              <label for="img-2" class="next-slide">
+                <span>&rsaquo;</span>
+              </label>
+            </div>
+          </li>
+          <input type="radio" name="radio-buttons" id="img-2" />
+          <li class="slide-container">
+            <div class="slide-image">
+              <img
+                src="https://content.r9cdn.net/rimg/dimg/db/02/06b291e8-city-14912-171317ad83a.jpg?width=1750&height=1000&xhint=3040&yhint=2553&crop=true"
+              />
+            </div>
+            <div class="carousel-controls">
+              <label for="img-1" class="prev-slide">
+                <span>&lsaquo;</span>
+              </label>
+              <label for="img-3" class="next-slide">
+                <span>&rsaquo;</span>
+              </label>
+            </div>
+          </li>
+          <input type="radio" name="radio-buttons" id="img-3" />
+          <li class="slide-container">
+            <div class="slide-image">
+              <img
+                src="https://speakzeasy.files.wordpress.com/2015/05/twa_blogpic_timisoara-4415.jpg"
+              />
+            </div>
+            <div class="carousel-controls">
+              <label for="img-2" class="prev-slide">
+                <span>&lsaquo;</span>
+              </label>
+              <label for="img-1" class="next-slide">
+                <span>&rsaquo;</span>
+              </label>
+            </div>
+          </li>
+          <div class="carousel-dots">
+            <label for="img-1" class="carousel-dot" id="img-dot-1"></label>
+            <label for="img-2" class="carousel-dot" id="img-dot-2"></label>
+            <label for="img-3" class="carousel-dot" id="img-dot-3"></label>
+          </div>
+          <div class="d-flex" style="height: 75vh; position: absolute; left: 0; right: 0">
+            <label for="img-1" class="h1 bg-dark p-2 mx-auto mt-auto text-white">Image 1</label>
+            <label for="img-2" class="h1 bg-dark p-2 mx-auto mt-auto text-white">Image 2</label>
+            <label for="img-2" class="h1 bg-dark p-2 mx-auto mt-auto text-white">Image 3</label>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <h1 class="text-center h1 my-5 text-white py-2 mx-auto" style="background: #e14d2a">
+      Why choose Arise Solutions?
+    </h1>
+    <div class="container pb-5">
+      <div class="row text-center">
+        <div class="col-lg-8 mx-auto">
+          <p class="mb-0 h4" style="line-height: 1.5">
+            Here at Arise Solution, we pride ourselves on being able to provide our clients with the
+            best possible candidates for their open positions. We are a technology driven company
+            with automated office operations and have a very quick turnaround time. We have been in
+            business for 15 years and have built relationships with other companies because of our
+            outstanding performance. If you are looking for a company that can provide you with
+            quality candidates, then look no further than Arise Solution! If you are in need of
+            staffing services, then look no further than Arise Solution! We are confident that we
+            can provide you with the best possible candidates for your open positions. We have built
+            lasting relationships with other companies over the years because of our commitment to
+            excellence. Contact us today to learn more about how we can help you!
+          </p>
+        </div>
+      </div>
+    </div>
+    <h1 class="text-center h1 my-5 text-white py-2 mx-auto bg-primary">Our Achievements</h1>
+    <div class="d-flex flex-sm-row flex-column justify-content-center">
+      <div class="w-md-25 d-grid gap-2 px-2">
+        <div class="flex justify-content-start align-items-center">
+          <h3>&#10003;</h3>
+          <h2 class="ml-2 h4">Leaders of the market</h2>
+        </div>
+        <div class="flex justify-content-start align-items-center">
+          <h3>&#10003;</h3>
+          <h3 class="ml-2 h4">Career Counselling and Mentorship</h3>
+        </div>
+        <div class="flex justify-content-start align-items-center">
+          <h3>&#10003;</h3>
+          <h3 class="ml-2 h4">Premium provider of quality candidates</h3>
+        </div>
+        <div class="flex justify-content-start align-items-center">
+          <h3>&#10003;</h3>
+          <h3 class="ml-2 h4">Providing quality candidates for 15 years</h3>
+        </div>
+        <div class="flex justify-content-start align-items-center">
+          <h3>&#10003;</h3>
+          <h3 class="ml-2 h4">Clientele ranging from TCS, Airtel, IBM.</h3>
+        </div>
+      </div>
+      <div class="mx-auto mx-md-0 mt-md-0 mt-5 achieve">
+        <img src="{% static 'home_images/home4.jpeg' %}" class="w-100" />
+      </div>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <div class="container mt-5">
+      <div class="" style="width: 100%">
+        <div class="row">
+          <div class="col-sm-6">
+            <img class="card-img" src="{% static 'img.png' %}" alt="Card image" />
+          </div>
+          <div class="col-sm-6">
+            <div class="card-body-right">
+              <h1 class="h1 text-white text-center py-2" style="background: #e14d2a">
+                How are we different?
+              </h1>
+              <div style="line-height: 1.4" class="text-justify h5">
+                In today's competitive marketplace, it is more important than ever to set yourself
+                apart from the competition. At Arise Solution, we have been able to do just that by
+                achieving numerous milestones and accomplishments that have set us apart from other
+                companies in the industry. Some of our most notable achievements include
+                certificates of Appreciation from leading IT firms and certificates of Excellence
+                from leading BPO firms. These accomplishments have not only strengthened our
+                confidence, but they have also motivated us to continue performing at our best day
+                after day and project after project. Thanks to our achievements, we have been able
+                to establish ourselves as a premier provider of Recruitment & Staffing services, and
+                we look forward to continue setting the standard in the industry for years to come.
+              </div>
+              <div style="text-align: left">
+                <a href="{% url 'ContactUs' %}" class="btn btn-primary">Contact Us</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+    <br />
+
+    <div class="h1 my-4 text-white text-center py-2 bg-primary">Our Clientele</div>
+    <div class="container pb-5">
+      <div class="row text-center">
+        <div class="col-lg-8 mx-auto">
+          <p class="mb-0 h4" style="line-height: 1.5">
+            Some of our esteemed clients such as the ones listed below motivate us to achieve new
+            levels of excellence every day. The long list of satisfied customers we have amassed
+            over the years is a testament to our dedication to provide top-notch results. This is
+            what drives us to continuously improve our processes and delivery methods. Our clients
+            know that they can rely on us to meet their needs and exceed their expectations. This
+            loyalty and trust is what motivates us to always strive for perfection. We are grateful
+            for the relationship we have with our clients and we look forward to many more years of
+            success together.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row text-center">
+        {% for client in clients %}
+        <div class="col-xl-3 col-sm-6 mb-5">
+          <div style="height: 8rem" class="bg-white rounded shadow w-fit d-grid">
+            <img
+              src="media/{{ client.logo }}"
+              alt="{{ client.name }}"
+              class="img-fluid rounded-circle w-25 shadow mx-auto my-auto"
+            />
+            <h5 class="mt-auto mb-3">{{ client.name }}</h5>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    {% endblock %}
+  </body>
+</html>

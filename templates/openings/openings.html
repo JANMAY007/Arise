@@ -1,0 +1,164 @@
+{% extends 'base.html' %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %} Openings {% endblock %}</title>
+  </head>
+  <body>
+    {% block content %}
+    <style>
+      .bw {
+        width: fit;
+      }
+
+      .show {
+        display: none;
+      }
+
+      @media screen and (max-width: 600px) {
+        .bw {
+          width: 100%;
+          position: relative;
+          right: 15px;
+        }
+
+        .show {
+          display: inline;
+        }
+
+        .hide {
+          display: none;
+        }
+      }
+    </style>
+    <div>
+      <div class="text-center text-white mt-3 mb-5" style="background: #e14d2a">
+        <h1 class="h1 text-center">
+          Find your next best workplace with us- in a family like ambience.
+        </h1>
+        <h3 class="h5 w-50 mx-auto pb-3">
+          Sorting out the best job can be tough and cracking it can be even tougher. But if you have
+          it in you and dream to make your own mark, be the part of our rapidly growing team. With
+          us you can experience the humane side of things.
+        </h3>
+      </div>
+      <div class="d-flex flex-sm-row flex-column container">
+{#        <div class="mt-5 pt-4 hide" style="margin-right: 5rem">#}
+{#          <h5 class="h5">Filters</h5>#}
+{#          <br />#}
+{#          <input type="checkbox" /> Remote Jobs#}
+{#          <h6 class="text-muted h6 mt-3">Job Type</h6>#}
+{#          <input class="my-1" type="checkbox" /> Any#}
+{#          <br />#}
+{#          <input class="my-1" type="checkbox" /> Contract#}
+{#          <br />#}
+{#          <input class="my-1" type="checkbox" /> Full Time#}
+{#          <br />#}
+{#          <input class="my-1" type="checkbox" /> Permanent#}
+{#          <br />#}
+{#          <input class="my-1" type="checkbox" /> Work from Home <br />#}
+{#          <h6 class="text-muted h6 mt-3">Country</h6>#}
+{#          <input class="my-1" type="checkbox" /> India <br />#}
+{#          <h6 class="text-muted h6 mt-3">Industry</h6>#}
+{#          <input class="my-1" type="checkbox" /> Business Management#}
+{#          <br />#}
+{#        </div>#}
+        <div class="w-100">
+          <h1 class="h3 m-0">Join us</h1>
+          <h1 class="h5 text-muted">Current Openings</h1>
+{#          <div class="show my-5" data-toggle="modal" data-target="#filter-modal">🜄 Filters</div>#}
+{#          <div#}
+{#            class="modal fade"#}
+{#            id="filter-modal"#}
+{#            role="dialog"#}
+{#            aria-labelledby="exampleModalLabel"#}
+{#            aria-hidden="true"#}
+{#          >#}
+{#            <div class="modal-dialog" role="document">#}
+{#              <div class="modal-content">#}
+{#                <div class="modal-header">#}
+{#                  <h5 class="modal-title" id="exampleModalLabel">Filters</h5>#}
+{#                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">#}
+{#                    <span aria-hidden="true">&times;</span>#}
+{#                  </button>#}
+{#                </div>#}
+{#                <div class="modal-body">#}
+{#                  <input type="checkbox" /> Remote Jobs#}
+{#                  <h6 class="text-muted h6 mt-3">Job Type</h6>#}
+{#                  <input class="my-1" type="checkbox" /> Any#}
+{#                  <br />#}
+{#                  <input class="my-1" type="checkbox" /> Contract#}
+{#                  <br />#}
+{#                  <input class="my-1" type="checkbox" /> Full Time#}
+{#                  <br />#}
+{#                  <input class="my-1" type="checkbox" /> Permanent#}
+{#                  <br />#}
+{#                  <input class="my-1" type="checkbox" /> Work from Home <br />#}
+{#                  <h6 class="text-muted h6 mt-3">Country</h6>#}
+{#                  <input class="my-1" type="checkbox" /> India <br />#}
+{#                  <h6 class="text-muted h6 mt-3">Industry</h6>#}
+{#                  <input class="my-1" type="checkbox" /> Business Management <br />#}
+{#                </div>#}
+{#                <div class="modal-footer">#}
+{#                  <button type="button" class="btn btn-secondary" data-dismiss="modal">#}
+{#                    Close#}
+{#                  </button>#}
+{#                  <button type="button" class="btn btn-primary">Apply Filters</button>#}
+{#                </div>#}
+{#              </div>#}
+{#            </div>#}
+{#          </div>#}
+          <div class="input-group mb-3 mr-3">
+            <div class="d-flex flex-sm-row flex-column mt-3">
+              <div class="input-group mr-3">
+                <h4 class="w-100 mb-3">What</h4>
+                  <label>
+                      <input type="text" class="form-control" placeholder="Job title or Skill" />
+                  </label>
+                  <div class="input-group-append">
+                  <span class="input-group-text" id="basic-addon2">&#128269;</span>
+                </div>
+              </div>
+              <br />
+              <div class="input-group mr-3">
+                <h4 class="w-100 mb-3">Where</h4>
+                  <label>
+                      <input type="text" class="form-control" placeholder="City, state/province or Country"/>
+                  </label>
+                  <div class="input-group-append">
+                  <span class="input-group-text" id="basic-addon2">&#128204;</span>
+                </div>
+              </div>
+              <br />
+            </div>
+            <div class="mt-md-5 mt-0 bw">
+              <button type="button" class="w-100 p ml-3 btn btn-warning">Search</button>
+            </div>
+            <div class="my-4"></div>
+              {% for dt in data %}
+            <div class="d-flex" style="width: 80vw">
+              <div>
+                <a href="{% url 'opening:Temporary' dt.id %}" class="h4 m-0 p-0 text-warning">
+                  {{ dt.job_title }} - {{ dt.hiring_city }}
+                </a>
+                <h6 class="h6 m-0 p-0">{{ dt.hiring_city }}, {{ dt.hiring_state }}, {{ dt.hiring_country }}</h6>
+                <br />
+                <p>{{ dt.job_role }}</p>
+              </div>
+              <div class="ml-md-auto ml-auto">
+                <h6 class="h6 font-weight-bold m-0 p-0">{{ dt.permanent }}</h6>
+                <h6 class="h6 m-0 p-0">{{ dt.posted_date }}</h6>
+                <h6 class="h6 m-0 p-0Kolkata, West Bengal, India">
+                    Experience {{ dt.experience_from_years }} - {{ dt.experience_to_years }}
+                </h6>
+              </div>
+            </div>
+          </div>
+            {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>

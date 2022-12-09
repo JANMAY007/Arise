@@ -1,0 +1,33 @@
+{% extends 'base.html' %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %} Life At Arise {% endblock %}</title>
+  </head>
+  <body>
+    {% block content %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+    <div>
+      <div class="">
+        <h1 class="h1 text-center text-white py-2 my-5" style="background: #e14d2a">Application Process</h1>
+        <div class="text-center">
+          <p style="color: black; font-size: 1.2rem; line-height: 1.5" class="w-75 mx-auto">
+            Arise Solution is committed to providing an excellent customer experience. To that end,
+            we have created the Arise Solution Job Seeker Portal - a streamlined application process
+            that takes the guesswork out of job seeking. The Arise Solution Job Seeker Portal is
+            designed to save you time and energy. We have simplified the process by gathering all of
+            the necessary information in one place. In just a few clicks, you will be on your way to
+            finding your perfect job match. Arise Solution values your time and is committed to
+            making your job search as efficient as possible. We hope you take advantage of the Arise
+            Solution Job Seeker Portal and find the position that is right for you. Thank you for
+            considering Arise Solution as your employment partner.
+          </p>
+          <img class="w-25 my-5" src="{% static 'image/application.png' %}" />
+        </div>
+          <button type="button" class="btn btn-primary d-flex mx-auto">Apply Here</button>
+      </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>

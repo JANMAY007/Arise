@@ -1,0 +1,307 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Quicksand" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js?r=5426"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Quantico&display=swap"
+      rel="stylesheet"
+    />
+    <title>{% block title %} {% endblock %}</title>
+    <style>
+      html {
+        {% comment %} font-family: "Josefin Sans", sans-serif; {% endcomment %}
+        font-family: 'Quantico', sans-serif;
+      }
+      .achieve {
+        width: 25%;
+      }
+
+      .dropdown-toggle::after {
+        vertical-align: 0.1em !important;
+      }
+
+      @media only screen and (min-width: 500) {
+        .achieve {
+          width: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+      <div class="container-fluid">
+        <a href="{% url 'Home' %}" class="navbar-brand">
+          <img src="{% static 'arise_logo.jpg' %}" height="70" alt="Arise" />
+        </a>
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav">
+            <a href="{% url 'Home' %}" class="nav-item nav-link active mr-3">Home</a>
+            <a href="#" class="nav-item nav-link active mr-3">Case Studies</a>
+            <a href="{% url 'blog:all_blogs' %}" class="nav-item nav-link active mr-3">Blogs</a>
+          </div>
+          <div class="nav-item dropdown mr-3">
+            <a
+              href="#"
+              class="nav-link dropdown-toggle p-0 m-2"
+              data-bs-toggle="dropdown"
+              style="color: black"
+              >Our Services</a
+            >
+            <div class="dropdown-menu">
+              <a href="{% url 'Apprenticeship' %}" class="dropdown-item">Apprenticeship</a>
+              <hr class="my-2" />
+              <a href="{% url 'BulkRecruit' %}" class="dropdown-item">Bulk Recruitment</a>
+              <hr class="my-2" />
+              <a href="{% url 'ContractStaff' %}" class="dropdown-item">Contract Staffing</a>
+              <hr class="my-2" />
+              <a href="{% url 'EmployeeLease' %}" class="dropdown-item">Employee Leasing</a>
+              <hr class="my-2" />
+              <a href="{% url 'HireTrainDeploy' %}" class="dropdown-item">Hire-Train-Deploy</a>
+              <hr class="my-2" />
+              <a href="{% url 'ItStaff' %}" class="dropdown-item">IT Staffing</a>
+              <hr class="my-2" />
+              <a href="{% url 'Leadership' %}" class="dropdown-item">Leadership Hiring</a>
+              <hr class="my-2" />
+              <a href="{% url 'Payroll' %}" class="dropdown-item">Payroll & Compliance</a>
+              <hr class="my-2" />
+              <a href="{% url 'PermStaff' %}" class="dropdown-item">Permanent/Temporary Staffing</a>
+              <hr class="my-2" />
+              <a href="{% url 'Turnkey' %}" class="dropdown-item">TurnKey Projects</a>
+            </div>
+          </div>
+          <div class="nav-item dropdown mr-3">
+            <a
+              href="#"
+              class="nav-link dropdown-toggle p-0 m-2"
+              data-bs-toggle="dropdown"
+              style="color: black"
+              >About Arise Solutions</a
+            >
+            <div class="dropdown-menu">
+              <a href="{% url 'ApplicationProcess' %}" class="dropdown-item">Application Process</a>
+              <hr class="my-2" />
+              <a href="{% url 'LifeAtArise' %}" class="dropdown-item">Life at Arise</a>
+              <hr class="my-2" />
+              <a href="{% url 'WhyAriseSolution' %}" class="dropdown-item">Why Arise Solutions</a>
+              <hr class="my-2" />
+              <a href="{% url 'Awards' %}" class="dropdown-item">Awards & Accomplishments</a>
+              <hr class="my-2" />
+              <a href="{% url 'Careers' %}" class="dropdown-item">Careers at Arise</a>
+            </div>
+          </div>
+          <div class="navbar-nav">
+            <a href="{% url 'ContactUs' %}" class="nav-item nav-link active mr-3">Contact Us</a>
+            <a href="{% url 'opening:Openings' %}" class="nav-item nav-link active mr-3"
+              >Current Openings</a
+            >
+            <a href="{% url 'WalkinForm' %}" class="nav-item nav-link active mr-3"
+              >Walk in Form</a
+            >
+          </div>
+          <div class="navbar-nav ms-auto">
+            {% if user.is_authenticated %}
+            <a href="{% url 'Logout' %}" class="nav-item nav-link" style="color: black">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-box-arrow-right"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"
+                ></path>
+                <path
+                  fill-rule="evenodd"
+                  d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"
+                ></path>
+              </svg>
+            </a>
+            {% else %}
+            <a href="{% url 'Login' %}" class="nav-item nav-link" style="color: black">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-box-arrow-left"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"
+                ></path>
+                <path
+                  fill-rule="evenodd"
+                  d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"
+                ></path>
+              </svg>
+            </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </nav>
+    {% block content %} {% endblock %}
+    <footer
+      class="py-5 mt-5 bg-dark"
+      style="background-image: linear-gradient(bottom, #000000, #2d3436)"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 mb-4 brand">
+            <h1 style="color: white">Brand</h1>
+            <br />
+            <ul class="brand-list">
+              <li><a href="{% url 'Home' %}" class="text-muted text-decoration-none">Home</a></li>
+              <br />
+              <li><a href="/about/" class="text-muted text-decoration-none">Arise Solutions</a></li>
+              <br />
+              <li>
+                <a href="/cart/" class="text-muted text-decoration-none">Rewards & Recognition</a>
+              </li>
+              <br />
+              <li>
+                <a href="/shippingandreturns/" class="text-muted text-decoration-none"
+                  >Achievements</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-4 contact-us">
+            <h1 style="color: white">Contact Us</h1>
+            <p class="text-muted my-3">
+              <a
+                href="mailto: info@arisesolution.com"
+                style="text-decoration: underline"
+                class="text-muted"
+              >
+                <span>Email</span>
+              </a>
+              <br />
+              <br />
+              <a href="tel: +919099922307">
+                <span style="text-decoration: underline" class="text-muted">Whatsapp</span>
+              </a>
+            </p>
+          </div>
+
+          <div class="col-md-6 mb-4 d-flex flex-column">
+            <h1 style="color: white" class="mr-auto mb-2">Sign up to our newsletter</h1>
+            <br />
+            <p class="text-left text-muted mb-2">
+              Be the first to know about our new collections and special offers
+            </p>
+            <br />
+            <div class="newsletter mr-auto">
+              <form method="POST" action="{% url 'add_mail' %}" class="d-flex">
+                {% csrf_token %} {{ my_form.subscribe }}
+                <button type="submit" class="btn btn-outline-light">Subscribe</button>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-2 mb-4 d-flex flex-column">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.0441550427918!2d72.5405593153495!3d23.02215092212016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84db49432a1f%3A0x90dd3f4fcf90feae!2sArise%20Solution!5e0!3m2!1sen!2sin!4v1668341256989!5m2!1sen!2sin"
+              class="mt-3"
+              width="150"
+              height="100"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <div class="col-md-4 mb-4 d-flex flex-column justify-content-center">
+            <h1 class="text-muted">
+              Arise Solution , 502 (West Wing), 5th Floor , Venus Stratum, @ Venus Grounds,
+              Nehrunagar Road , Ahmedabad 380015.
+            </h1>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+{% extends 'base.html' %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %} Careers at Arise {% endblock %}</title>
+  </head>
+  <body>
+    {% block content %}
+    <style>
+      @media screen and (max-width: 600px) {
+        .hide {
+          display: none;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+    <div>
+      <div>
+        <h1 class="h1 text-center text-white py-2 my-5" style="background: #e14d2a">
+          Why We're the Top Recruitment and Staffing Services Provider
+        </h1>
+        <div class="text-center">
+          <p style="color: black; font-size: 1.2rem; line-height: 1.5" class="w-75 mx-auto">
+            At Arise Solution, we're proud to be the top recruitment and staffing services provider
+            in the industry. We attribute our success to our team of dedicated and passionate
+            professionals who are committed to helping businesses find the top talent for their
+            needs. We believe that our experience, combined with our cutting-edge technology and
+            personal touch, is what sets us apart from our competitors.
+          </p>
+        </div>
+      </div>
+      <br /><br />
+      <div class="container mt-5">
+        <div class="row mx-5">
+          <div class="d-flex flex-sm-row flex-column mb-5 align-items-center" style="gap: 18rem">
+            <img
+              class="w-75 hide"
+              src="{% static 'why_arise_solutions/1.png' %}"
+              class="card-img-top"
+            />
+            <div class="text-left w-75">
+              <h5 style="font-size: 2rem">Experience</h5>
+              <p class="mt-2" style="line-height: 1.5">
+                Number of Years in Business: Arise Solutions was founded in 2006 and since then we
+                have placed over 500,000 candidates in jobs with some of the top companies in the
+                world. Our wealth of experience means that we know how to find the right candidates
+                for any position, no matter how specific or difficult it may be. Testimonials from
+                Satisfied Customers: Over the years, we have worked with some of the biggest names
+                in business, including Microsoft, Google, and Amazon.
+              </p>
+            </div>
+          </div>
+          <div class="d-flex flex-sm-row flex-column my-5 align-items-center" style="gap: 18rem">
+            <div class="text-left w-100">
+              <h5 style="font-size: 2rem">Technology</h5>
+              <p class="mt-2" style="line-height: 1.5">
+                &#10003; JobBoard software: We use the latest JobBoard software to post your job
+                openings on all of the major job boards with one simple click.<br />
+                &#10003; Applicant Tracking System (ATS): Once job seekers start applying for your
+                open positions, our ATS will help you keep track of all applications.<br />
+                &#10003; Background Check System: Candidates go through a thorough background check
+                before they are presented. This ensures that you're only seeing qualified candidates
+                who meet your requirements.
+              </p>
+            </div>
+            <img
+              class="w-50 hide"
+              src="{% static 'why_arise_solutions/4.jpg' %}"
+              class="card-img-top"
+            />
+          </div>
+        </div>
+        <div class="row mx-5">
+          <div class="d-flex flex-sm-row flex-column my-5 align-items-center" style="gap: 18rem">
+            <img
+              class="w-50 hide"
+              src="{% static 'why_arise_solutions/3.png' %}"
+              class="card-img-top"
+            />
+            <div class="text-left w-75">
+              <h5 style="font-size: 2rem">Personal Touch</h5>
+              <p class="mt-2" style="line-height: 1.5">
+                When you partner with Arise Solution, you'll be assigned a personal account manager
+                who will get to know your business inside and out. They'll learn about your company
+                culture, values, and goals so that they can find candidates who are not only
+                qualified but also a good fit for your organization. Your account manager will be
+                available 24/7 to answer any questions or concerns you may have about our services.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>

@@ -1,0 +1,17 @@
+from django.db import models
+from django_quill.fields import QuillField
+
+
+class Blog(models.Model):
+    title = models.CharField(max_length=200)
+    date = models.DateTimeField(auto_now_add=True)
+    body = QuillField()
+
+    def __str__(self):
+        return self.title
+
+    def summary(self):
+        return self.body[:100]
+
+    def pub_date_pretty(self):
+        return self.date.strftime('%b %e %Y')

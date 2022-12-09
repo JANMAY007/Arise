@@ -1,0 +1,44 @@
+{% extends 'base.html' %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %} Bulk Recruit {% endblock %}</title>
+  </head>
+  <body>
+    {% block content %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+    <div>
+      <div class="">
+        <h1 class="h1 text-center text-white py-2 my-5" style="background: #e14d2a">
+          Bulk Recruiting at Arise
+        </h1>
+        <div class="text-center">
+          <p style="color: black; font-size: 1.2rem; line-height: 1.5" class="w-75 mx-auto">
+            In the recruitment industry, volume hiring refers to the process of recruiting a large
+            number of candidates in a short period of time. This is often done in order to fill a
+            high-demand role or to staff a new location. In order to successfully complete a volume
+            hire, recruiters must have a strong understanding of the needs of the client and be able
+            to identify suitable candidates quickly. They must also be able to manage a large pool
+            of candidates and keep track of their progress throughout the recruitment process. While
+            volume hiring can be challenging, it can also be very rewarding for both recruiters and
+            clients. When done correctly, it can help businesses to quickly fill critical roles and
+            grow their workforce. Bulk hiring can be a daunting task for any organization. From
+            sourcing to screening to scheduling interviews, the process canTake up a lot of time and
+            resources. Arise Solution offers Bulk Recruitment Services that can help companies save
+            time and money. We have a global network of talent sourcers and recruiters who can help
+            you quickly fill open positions. Our Bulk Recruitment Service includes: • Sourcing: We
+            will identify and engage candidates that match your specific job requirements. •
+            Screening: We will screen candidates using our proven methodology that assesses skills,
+            experience, and motivation. • Scheduling: We will coordinate interviews and provide
+            feedback to help you make the best hiring decisions. Arise Solution has the experience
+            and expertise to help you with all your volume hiring needs. Contact us today to learn
+            more about our Bulk Recruitment Service.
+          </p>
+          <img style="width: 40%" class="my-5" src="{% static 'recruit.jpeg' %}" />
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>

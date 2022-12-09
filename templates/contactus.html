@@ -1,0 +1,83 @@
+{% extends 'base.html' %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %} Contact Us {% endblock %}</title>
+  </head>
+  <body>
+    {% block content %}
+    <link rel="stylesheet" href="{% static 'css/contactus.css' %}" />
+    <section class="gradient-form" style="background-color: #eee">
+      <div class="container" style="padding-top: 100px">
+        <div class="row d-flex justify-content-center align-items-center">
+          <div class="col-xl-10">
+            <div class="card rounded-3 text-black">
+              <div class="row g-0">
+                <div class="col-lg-6">
+
+
+                  <div class="card-body p-md-5 mx-md-4">
+                    <div class="text-center">
+                      <img src="{% static 'arise_logo.jpg' %}" style="width: 185px" alt="logo" />
+                    </div>
+                    <br />
+                      {% if error %}
+                      <div class="alert alert-danger" role="alert">{{ error }}</div>
+                      {% endif %}
+                    <form method="post" action="{% url 'ContactUs' %}">
+                        {% csrf_token %}
+                      <div class="form-outline mb-4 form-group">
+                        <label class="form-label" for="name">Name</label>
+                        <input type="text" id="name" name="name" class="form-control" />
+                      </div>
+
+                      <div class="form-outline mb-4 form-group">
+                        <label class="form-label" for="email">Email</label>
+                        <input type="email" id="email" name="email" class="form-control" />
+                      </div>
+
+                      <div class="form-outline mb-4 form-group">
+                        <label class="form-label" for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" class="form-control" />
+                      </div>
+                      <div class="form-outline mb-4 form-group">
+                        <label class="form-label" for="message">Message</label>
+                        <input type="text" id="message" name="message" class="form-control" />
+                      </div>
+
+                        <button type="submit" class="btn btn-block fa-lg text-white bg-primary mb-3">Send</button>
+                    </form>
+                  </div>
+
+
+
+
+
+                </div>
+                <div class="col-lg-6 d-flex align-items-center" style="background: #e14d2a">
+                  <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                    <p class="mb-4 lead" style="font-size: 2rem">
+                      We are more than just a Company...
+                    </p>
+                    <p class="small mb-0 lead text-justify" style="line-height: 1.5">
+                      At Arise Solution, we are the leading provider of recruitment and staffing
+                      services. We specialize in finding the right people for the right job, and we
+                      have a proven track record of success. If you are looking for a new employee
+                      or if you are looking for a new job, we have a team of experienced
+                      professionals who are experts at matching people with the right jobs. We offer
+                      a variety of services, including job placement, resume writing, and career
+                      counseling. We also provide training and development programs to help
+                      employees improve their skills and advance their careers.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% endblock %}
+  </body>
+</html>
